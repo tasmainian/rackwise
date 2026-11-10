@@ -1,0 +1,845 @@
+[
+  {
+    "id": "big-score-gap",
+    "rack": "QUITERS",
+    "played_word": "SUITE",
+    "words": [
+      [
+        "QUITERS",
+        17
+      ],
+      [
+        "QUIETS",
+        15
+      ],
+      [
+        "SUITE",
+        5
+      ]
+    ],
+    "recommend": [
+      "QUITERS"
+    ],
+    "mentions": [
+      [
+        "QUITERS"
+      ],
+      [
+        "52"
+      ]
+    ],
+    "forbidden": [],
+    "retrieves": [
+      "N31",
+      "N17"
+    ],
+    "reference": {
+      "summary": "QUITERS was available and scores 52 more than SUITE.",
+      "themes": [],
+      "turns": [
+        {
+          "turn": 1,
+          "recommended_word": "QUITERS",
+          "note": "SUITE earned 5, and QUITERS earns 57 with every tile used."
+        }
+      ]
+    }
+  },
+  {
+    "id": "duplicate-in-leave",
+    "rack": "UUDGENT",
+    "played_word": "TEND",
+    "words": [
+      [
+        "NUDGE",
+        7
+      ],
+      [
+        "TUNED",
+        6
+      ],
+      [
+        "TEND",
+        5
+      ]
+    ],
+    "recommend": [
+      "NUDGE",
+      "TUNED"
+    ],
+    "mentions": [
+      [
+        "GUU",
+        "duplicate",
+        "two U"
+      ]
+    ],
+    "forbidden": [],
+    "retrieves": [
+      "N01",
+      "N02"
+    ],
+    "reference": {
+      "summary": "NUDGE scores more and gets rid of a U.",
+      "themes": [],
+      "turns": [
+        {
+          "turn": 1,
+          "recommended_word": "NUDGE",
+          "note": "TEND keeps GUU, and two U's rarely work together."
+        }
+      ]
+    }
+  },
+  {
+    "id": "q-without-u",
+    "rack": "QAEINRT",
+    "played_word": "RETINA",
+    "words": [
+      [
+        "QAT",
+        12
+      ],
+      [
+        "RETINA",
+        6
+      ],
+      [
+        "TRAIN",
+        5
+      ]
+    ],
+    "recommend": [
+      "QAT"
+    ],
+    "mentions": [
+      [
+        "QAT"
+      ],
+      [
+        "Q"
+      ]
+    ],
+    "forbidden": [],
+    "retrieves": [
+      "N17",
+      "N18",
+      "N19"
+    ],
+    "reference": {
+      "summary": "QAT scores twice as much and gets rid of the Q.",
+      "themes": [],
+      "turns": [
+        {
+          "turn": 1,
+          "recommended_word": "QAT",
+          "note": "RETINA leaves you holding the Q with no U."
+        }
+      ]
+    }
+  },
+  {
+    "id": "wasted-blank",
+    "rack": "?AELRST",
+    "played_word": "CAT",
+    "words": [
+      [
+        "STALER",
+        6
+      ],
+      [
+        "SALTER",
+        6
+      ],
+      [
+        "CAT",
+        2,
+        [
+          0
+        ]
+      ]
+    ],
+    "recommend": [
+      "STALER",
+      "SALTER"
+    ],
+    "mentions": [
+      [
+        "blank"
+      ]
+    ],
+    "forbidden": [],
+    "retrieves": [
+      "N22",
+      "N25",
+      "N26",
+      "N27"
+    ],
+    "reference": {
+      "summary": "STALER scores more and keeps the blank.",
+      "themes": [],
+      "turns": [
+        {
+          "turn": 1,
+          "recommended_word": "STALER",
+          "note": "CAT spends the blank for very few points, and a blank is the most valuable tile to keep."
+        }
+      ]
+    }
+  },
+  {
+    "id": "too-many-vowels",
+    "rack": "AEIOULT",
+    "played_word": "LOT",
+    "words": [
+      [
+        "LOUIE",
+        5
+      ],
+      [
+        "TOILE",
+        5
+      ],
+      [
+        "LOT",
+        3
+      ]
+    ],
+    "recommend": [
+      "LOUIE",
+      "TOILE"
+    ],
+    "mentions": [
+      [
+        "vowel"
+      ]
+    ],
+    "forbidden": [],
+    "retrieves": [
+      "N08",
+      "N10",
+      "N02"
+    ],
+    "reference": {
+      "summary": "LOUIE scores more and clears the vowels.",
+      "themes": [],
+      "turns": [
+        {
+          "turn": 1,
+          "recommended_word": "LOUIE",
+          "note": "LOT keeps AEIU, which is all vowels."
+        }
+      ]
+    }
+  },
+  {
+    "id": "too-many-consonants",
+    "rack": "BCDFGAE",
+    "played_word": "CAB",
+    "words": [
+      [
+        "FACED",
+        10
+      ],
+      [
+        "BADGE",
+        8
+      ],
+      [
+        "CAB",
+        7
+      ]
+    ],
+    "recommend": [
+      "FACED"
+    ],
+    "mentions": [
+      [
+        "consonant",
+        "vowel"
+      ]
+    ],
+    "forbidden": [],
+    "retrieves": [
+      "N12",
+      "N13",
+      "N14",
+      "N16"
+    ],
+    "reference": {
+      "summary": "FACED scores 3 more and leaves fewer awkward tiles.",
+      "themes": [],
+      "turns": [
+        {
+          "turn": 1,
+          "recommended_word": "FACED",
+          "note": "CAB keeps DEFG, with three consonants to one vowel."
+        }
+      ]
+    }
+  },
+  {
+    "id": "good-choice",
+    "rack": "HELLOTS",
+    "played_word": "HOTELS",
+    "words": [
+      [
+        "HOTELS",
+        9
+      ],
+      [
+        "HELLOS",
+        9
+      ],
+      [
+        "HOLES",
+        8
+      ]
+    ],
+    "recommend": [
+      "HOTELS",
+      "HELLOS"
+    ],
+    "mentions": [
+      [
+        "best",
+        "top",
+        "highest",
+        "good",
+        "strong"
+      ]
+    ],
+    "forbidden": [],
+    "reference": {
+      "summary": "HOTELS was a good choice, tied for the best points.",
+      "themes": [],
+      "turns": [
+        {
+          "turn": 1,
+          "recommended_word": "HOTELS",
+          "note": "No listed word beats its 9 points."
+        }
+      ]
+    }
+  },
+  {
+    "id": "missed-bingo",
+    "rack": "SAETRNB",
+    "played_word": "BANTER",
+    "words": [
+      [
+        "BANTERS",
+        8
+      ],
+      [
+        "BANTER",
+        7
+      ],
+      [
+        "BEAST",
+        5
+      ]
+    ],
+    "recommend": [
+      "BANTERS"
+    ],
+    "mentions": [
+      [
+        "BANTERS"
+      ],
+      [
+        "bingo",
+        "whole rack",
+        "all seven",
+        "every tile",
+        "all your tiles"
+      ]
+    ],
+    "forbidden": [],
+    "retrieves": [
+      "N31",
+      "N32",
+      "N33",
+      "N36"
+    ],
+    "reference": {
+      "summary": "BANTERS uses every tile, while BANTER holds back the S.",
+      "themes": [],
+      "turns": [
+        {
+          "turn": 1,
+          "recommended_word": "BANTERS",
+          "note": "BANTERS uses the whole rack, so it's the play to look for."
+        }
+      ]
+    }
+  },
+  {
+    "id": "through-a-board-letter",
+    "rack": "RAINTOS",
+    "board_letters": "E",
+    "played_word": "SENATOR",
+    "words": [
+      [
+        "NOTARIES",
+        8
+      ],
+      [
+        "SENATOR",
+        7
+      ],
+      [
+        "ORIENT",
+        6
+      ]
+    ],
+    "recommend": [
+      "NOTARIES"
+    ],
+    "mentions": [
+      [
+        "NOTARIES"
+      ],
+      [
+        "bingo",
+        "whole rack",
+        "all seven",
+        "every tile",
+        "all your tiles"
+      ]
+    ],
+    "forbidden": [],
+    "retrieves": [
+      "N34",
+      "N31"
+    ],
+    "reference": {
+      "summary": "NOTARIES plays every tile through the board's letter.",
+      "themes": [],
+      "turns": [
+        {
+          "turn": 1,
+          "recommended_word": "NOTARIES",
+          "note": "NOTARIES uses the whole rack, while SENATOR keeps one tile."
+        }
+      ]
+    }
+  },
+  {
+    "id": "small-gap-better-leave",
+    "rack": "XIITERD",
+    "played_word": "EXIT",
+    "words": [
+      [
+        "DIXIT",
+        12
+      ],
+      [
+        "EXIT",
+        11
+      ],
+      [
+        "TIDE",
+        5
+      ]
+    ],
+    "recommend": [
+      "DIXIT"
+    ],
+    "mentions": [
+      [
+        "DIXIT"
+      ],
+      [
+        "DIR",
+        "ER",
+        "two I",
+        "I's"
+      ]
+    ],
+    "forbidden": [],
+    "reference": {
+      "summary": "DIXIT scores 1 more and leaves ER.",
+      "themes": [],
+      "turns": [
+        {
+          "turn": 1,
+          "recommended_word": "DIXIT",
+          "note": "DIXIT plays both I's, while EXIT keeps DIR."
+        }
+      ]
+    }
+  },
+  {
+    "id": "word-not-in-list",
+    "rack": "ABCDEFG",
+    "played_word": "FABED",
+    "words": [
+      [
+        "FACED",
+        10
+      ],
+      [
+        "BADGE",
+        8
+      ]
+    ],
+    "recommend": [
+      "FACED",
+      "BADGE"
+    ],
+    "mentions": [
+      [
+        "not in",
+        "isn't in",
+        "not listed",
+        "isn't listed",
+        "not valid",
+        "isn't valid"
+      ]
+    ],
+    "forbidden": [],
+    "retrieves": [
+      "N49",
+      "N50"
+    ],
+    "reference": {
+      "summary": "FABED isn't in the list, so FACED is the better play.",
+      "themes": [],
+      "turns": [
+        {
+          "turn": 1,
+          "recommended_word": "FACED",
+          "note": "FACED earns 10, the most of the listed words."
+        }
+      ]
+    }
+  },
+  {
+    "id": "no-play-yet",
+    "rack": "TRAINED",
+    "words": [
+      [
+        "TRAINED",
+        7
+      ],
+      [
+        "DETRAIN",
+        7
+      ],
+      [
+        "TRAIN",
+        5
+      ]
+    ],
+    "recommend": [
+      "TRAINED",
+      "DETRAIN"
+    ],
+    "mentions": [
+      [
+        "whole rack",
+        "bingo",
+        "all seven",
+        "every tile",
+        "all your tiles"
+      ]
+    ],
+    "forbidden": [
+      "you played"
+    ],
+    "retrieves": [
+      "N48",
+      "N31"
+    ],
+    "reference": {
+      "summary": "TRAINED uses every tile on your rack.",
+      "themes": [],
+      "turns": [
+        {
+          "turn": 1,
+          "recommended_word": "TRAINED",
+          "note": "TRAINED and DETRAIN both use the whole rack, so choose whichever fits the board."
+        }
+      ]
+    }
+  },
+  {
+    "id": "no-board-claims",
+    "rack": "PLAYERS",
+    "played_word": "PLAY",
+    "words": [
+      [
+        "PLAYERS",
+        10
+      ],
+      [
+        "PARSLEY",
+        10
+      ],
+      [
+        "PLAYS",
+        9
+      ]
+    ],
+    "recommend": [
+      "PLAYERS",
+      "PARSLEY"
+    ],
+    "mentions": [
+      [
+        "PLAYERS",
+        "PARSLEY"
+      ]
+    ],
+    "forbidden": [
+      "triple",
+      "premium",
+      "double",
+      "opens",
+      "defence",
+      "defense",
+      "opponent"
+    ],
+    "reference": {
+      "summary": "PLAYERS uses every tile, and PLAY holds back three.",
+      "themes": [],
+      "turns": [
+        {
+          "turn": 1,
+          "recommended_word": "PLAYERS",
+          "note": "PLAYERS and PARSLEY both use the whole rack."
+        }
+      ]
+    }
+  },
+  {
+    "id": "list-cut-off",
+    "rack": "AEINRST",
+    "played_word": "RETAINS",
+    "more_available": true,
+    "words": [
+      [
+        "RETAINS",
+        7
+      ],
+      [
+        "STAINER",
+        7
+      ],
+      [
+        "NASTIER",
+        7
+      ]
+    ],
+    "recommend": [
+      "RETAINS",
+      "STAINER",
+      "NASTIER"
+    ],
+    "mentions": [
+      [
+        "may exist",
+        "might exist",
+        "may have been",
+        "could exist",
+        "better play",
+        "may be better",
+        "might be better"
+      ]
+    ],
+    "forbidden": [
+      "invalid",
+      "not valid",
+      "best possible"
+    ],
+    "reference": {
+      "summary": "RETAINS was tied for the highest score found, though a better play may exist because the search was cut off.",
+      "themes": [],
+      "turns": [
+        {
+          "turn": 1,
+          "recommended_word": "RETAINS",
+          "note": "RETAINS uses the whole rack."
+        }
+      ]
+    }
+  },
+  {
+    "id": "points-versus-duplicates",
+    "rack": "UUTRAIN",
+    "played_word": "TRAIN",
+    "words": [
+      [
+        "TRAIN",
+        5
+      ],
+      [
+        "UNIT",
+        4
+      ],
+      [
+        "TUNA",
+        4
+      ]
+    ],
+    "recommend": [
+      "TRAIN",
+      "UNIT",
+      "TUNA"
+    ],
+    "mentions": [
+      [
+        "UU",
+        "two U",
+        "duplicate"
+      ]
+    ],
+    "forbidden": [],
+    "retrieves": [
+      "N01",
+      "N02",
+      "N03"
+    ],
+    "reference": {
+      "summary": "UNIT gives up a point to fix your rack.",
+      "themes": [],
+      "turns": [
+        {
+          "turn": 1,
+          "recommended_word": "UNIT",
+          "note": "TRAIN keeps UU, and two U's are hard to play together."
+        }
+      ]
+    }
+  },
+  {
+    "id": "habit-keeping-two-us",
+    "turns": [
+      {
+        "rack": "UUDGENT",
+        "played_word": "TEND",
+        "words": [
+          [
+            "NUDGE",
+            7
+          ],
+          [
+            "TEND",
+            5
+          ]
+        ]
+      },
+      {
+        "rack": "UUBRATE",
+        "played_word": "BRAT",
+        "words": [
+          [
+            "BRUTE",
+            8
+          ],
+          [
+            "BRAT",
+            6
+          ]
+        ]
+      },
+      {
+        "rack": "UUSPINE",
+        "played_word": "SPINE",
+        "words": [
+          [
+            "SUPINE",
+            8
+          ],
+          [
+            "SPINE",
+            7
+          ]
+        ]
+      }
+    ],
+    "mentions": [
+      [
+        "two U",
+        "U's",
+        "duplicate",
+        "double U",
+        "UU"
+      ]
+    ],
+    "forbidden": [],
+    "retrieves": [
+      "N01",
+      "N02",
+      "N03"
+    ],
+    "reference": {
+      "summary": "You kept two U's after TEND, BRAT and SPINE, which cost you points.",
+      "themes": [
+        "Play a U when you hold two, as NUDGE, BRUTE and SUPINE would have."
+      ],
+      "turns": [
+        {
+          "turn": 1,
+          "recommended_word": "NUDGE",
+          "note": "TEND kept GUU."
+        }
+      ]
+    }
+  },
+  {
+    "id": "strong-game",
+    "turns": [
+      {
+        "rack": "HELLOTS",
+        "played_word": "HOTELS",
+        "words": [
+          [
+            "HOTELS",
+            9
+          ],
+          [
+            "HELLOS",
+            9
+          ]
+        ]
+      },
+      {
+        "rack": "AEINRST",
+        "played_word": "RETAINS",
+        "words": [
+          [
+            "RETAINS",
+            7
+          ],
+          [
+            "STAINER",
+            7
+          ]
+        ]
+      }
+    ],
+    "mentions": [
+      [
+        "good",
+        "strong",
+        "well",
+        "best",
+        "great"
+      ]
+    ],
+    "forbidden": [
+      "missed",
+      "should have",
+      "mistake"
+    ],
+    "reference": {
+      "summary": "A strong game: both plays were the best found.",
+      "themes": [
+        "Keep looking for plays that use every tile, as RETAINS did."
+      ],
+      "turns": []
+    }
+  }
+]

@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rackwise-coach"
+version = "0.1.0"
+description = "Coaching service for Rackwise"
+requires-python = ">=3.12"
+dependencies = [
+    # 1.x and later need httpx2. Stay on 0.x so the coach has one HTTP client.
+    "anthropic>=0.125,<1",
+    "fastapi>=0.115",
+    "httpx>=0.27",
+    # 2.x needs httpx2, like the SDKs below. model2vec pulls this in.
+    "huggingface_hub<2",
+    # 2.x needs httpx2. Stay on 1.x so the coach has one HTTP client.
+    "mcp>=1.20,<2",
+    # Static embeddings with numpy only, so no torch or onnxruntime (which has no Intel Mac wheels).
+    "model2vec>=0.10,<1",
+    "numpy>=2",
+    # BSD-licensed Postgres driver, chosen over psycopg, which is LGPL.
+    "pg8000>=1.31",
+    "pgvector>=0.5",
+    "uvicorn>=0.32",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "ruff>=0.8",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

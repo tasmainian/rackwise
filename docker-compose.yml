@@ -1,0 +1,95 @@
+# Runs the whole stack: docker compose up --build
+# Every setting has a default. Coaching needs ANTHROPIC_API_KEY in .env.
+# Ports are bound to localhost because this is a development setup with a
+# throwaway database password.
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_USER: rackwise
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-rackwise}
+      POSTGRES_DB: rackwise
+    ports:
+      # 5433 on the host so this doesn't clash with a locally installed Postgres.
+      # Containers still reach the database at db:5432.
+      - "127.0.0.1:${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rackwise -d rackwise"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  engine:
+    build: ./engine
+    environment:
+      PORT: "8080"
+      DATABASE_URL: postgresql://rackwise:${POSTGRES_PASSWORD:-rackwise}@db:5432/rackwise
+    ports:
+      - "127.0.0.1:${ENGINE_PORT:-8080}:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/healthz"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  coach:
+    build: ./coach
+    environment:
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      COACH_MODEL: ${COACH_MODEL:-claude-sonnet-5-5}
+      COACH_EFFORT: ${COACH_EFFORT:-medium}
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-minishlab/potion-base-8M}
+      NOTES_DIR: /app/notes
+      DATABASE_URL: postgresql://rackwise:${POSTGRES_PASSWORD:-rackwise}@db:5432/rackwise
+      ENGINE_URL: http://engine:8080
+      PROMPTS_DIR: /app/prompts
+    ports:
+      - "127.0.0.1:${COACH_PORT:-8000}:8000"
+    volumes:
+      - ./prompts:/app/prompts:ro
+      # Edited notes are embedded again on the next summary, with no rebuild.
+      - ./notes:/app/notes:ro
+    depends_on:
+      db:
+        condition: service_healthy
+      engine:
+        condition: service_healthy
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/healthz', timeout=2)"
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  web:
+    build: ./web
+    environment:
+      # Read by the Vite proxy (web/vite.config.ts), not by the browser.
+      ENGINE_URL: http://engine:8080
+      COACH_URL: http://coach:8000
+    ports:
+      # Off by default. Set WEB_HOST=0.0.0.0 to reach the app from a phone on the same Wi-Fi.
+      # There is no login, so anyone on that network could use it and your API key.
+      - "${WEB_HOST:-127.0.0.1}:${WEB_PORT:-5173}:5173"
+    depends_on:
+      engine:
+        condition: service_healthy
+      coach:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:5173/"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  db-data:

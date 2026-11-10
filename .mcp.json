@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "rackwise": {
+      "command": "coach/.venv/bin/python",
+      "args": ["-m", "rackwise_coach.mcp_server"]
+    }
+  }
+}

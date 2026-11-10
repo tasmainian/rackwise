@@ -1,0 +1,327 @@
+{
+  "prompt": "game-v1",
+  "passed": 12,
+  "total": 17,
+  "rows": [
+    {
+      "id": "big-score-gap",
+      "failures": [],
+      "answer": {
+        "summary": "You played SUITE for 5 points on your only turn, which was 12 points behind the best play. You missed a seven-tile play that was sitting on your rack.",
+        "themes": [
+          "Look for plays that use all seven tiles before settling on a short word.",
+          "Avoid keeping a Q without a U, since it clogs your next rack."
+        ],
+        "turns": [
+          {
+            "turn": 1,
+            "recommended_word": "QUITERS",
+            "note": "Your rack was QUITERS, which plays in full at 8H for 17 points and empties your rack. SUITE scored 5 and kept QR, a Q without a U, so it was the weakest of the three options."
+          }
+        ]
+      }
+    },
+    {
+      "id": "duplicate-in-leave",
+      "failures": [],
+      "answer": {
+        "summary": "You played TEND for 5 points on your only turn, which was 2 points behind the best play found. The bigger issue was the leave: it kept two U's and a G.",
+        "themes": [
+          "Avoid keeping duplicate U's, since they clog the rack",
+          "Look for plays that use the clunky letters, not just the easy word"
+        ],
+        "turns": [
+          {
+            "turn": 1,
+            "recommended_word": "NUDGE",
+            "note": "NUDGE scores 7 against your 5 for TEND, and it uses a U and the G. It leaves TU, while TEND leaves GUU, with a duplicate U and no good vowel-consonant balance."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q-without-u",
+      "failures": [],
+      "answer": {
+        "summary": "You played RETINA for 6 points on your only turn, which was 6 points behind the best play found. It was a valid word, but it left you holding a lone Q with no U.",
+        "themes": [
+          "Avoid keeping a Q without a U when a good alternative exists",
+          "Look for plays that score and keep a balanced leave"
+        ],
+        "turns": [
+          {
+            "turn": 1,
+            "recommended_word": "QAT",
+            "note": "QAT scored 12 and kept EINR, a balanced leave with two vowels and two consonants. RETINA scored 6 and left a Q with no U and no vowels, so you gave up points and leave quality."
+          }
+        ]
+      }
+    },
+    {
+      "id": "wasted-blank",
+      "failures": [
+        "error: mentioned AELRST, which isn't in the data"
+      ],
+      "answer": null
+    },
+    {
+      "id": "too-many-vowels",
+      "failures": [],
+      "answer": {
+        "summary": "You played LOT for 3 points on your only turn, 2 behind the best play found. It also kept a very vowel-heavy leave of AEIU.",
+        "themes": [
+          "Keep your leave balanced: AEIU has four vowels and no consonants.",
+          "When the scores are close, choose the play that dumps extra vowels and keeps a better mix."
+        ],
+        "turns": [
+          {
+            "turn": 1,
+            "recommended_word": "LOUIE",
+            "note": "LOUIE scored 5 against your 3 and used four vowels, which left you with the balanced leave AT. That is more points and a much healthier rack than the AEIU you kept with LOT."
+          }
+        ]
+      }
+    },
+    {
+      "id": "too-many-consonants",
+      "failures": [
+        "mentioned none of ['consonant']"
+      ],
+      "answer": {
+        "summary": "You played CAB for 7 points in a single turn, which was 3 points behind the best play found. The play was valid, but a higher-scoring option was available.",
+        "themes": [
+          "Check the top-scoring options before you settle on a play.",
+          "Weigh the leave against the score, and only give up points when the gain is clear."
+        ],
+        "turns": [
+          {
+            "turn": 1,
+            "recommended_word": "FACED",
+            "note": "FACED scored 10 against your 7 and used five tiles. It kept BG, which has no vowels, but CAB's leave of DEFG is also awkward, so the extra three points made FACED the better choice."
+          }
+        ]
+      }
+    },
+    {
+      "id": "good-choice",
+      "failures": [
+        "recommended None"
+      ],
+      "answer": {
+        "summary": "You played HOTELS for 9 points on your only turn, which matched the best score found, so there were no points behind. It used six of your seven tiles and left a single consonant.",
+        "themes": [
+          "Keep choosing plays that match the top score while leaving a tidy rack",
+          "Look for seven-tile plays when your rack has a good mix of letters"
+        ],
+        "turns": [
+          {
+            "turn": 1,
+            "recommended_word": null,
+            "note": "HOTELS scored 9, tying HELLOS for the top score, and kept just L. HELLOS would have kept T instead, so the two leaves are close, but your choice was a good one."
+          }
+        ]
+      }
+    },
+    {
+      "id": "missed-bingo",
+      "failures": [
+        "recommended None"
+      ],
+      "answer": {
+        "summary": "You played BANTER for 7 points on your only turn, just 1 point behind the best play, BANTERS. It was a sensible, valid play that kept a useful tile.",
+        "themes": [
+          "Keep a flexible tile like the S when the points cost is tiny",
+          "Look for seven-tile plays, and weigh them against what the leave is worth"
+        ],
+        "turns": [
+          {
+            "turn": 1,
+            "recommended_word": null,
+            "note": "BANTER scored 7 against 8 for BANTERS, so you gave up 1 point to keep S. That was a good trade, because BANTERS uses all seven tiles but leaves nothing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "through-a-board-letter",
+      "failures": [],
+      "answer": {
+        "summary": "You played SENATOR for 7 points on your only turn, one point behind the best play found. You missed a play that used all seven tiles, NOTARIES for 8.",
+        "themes": [
+          "Look for plays that use all seven tiles when your rack holds common letters like RAINTOS.",
+          "Check the top-scoring option before settling, since a small score gap can still mean using the whole rack."
+        ],
+        "turns": [
+          {
+            "turn": 1,
+            "recommended_word": "NOTARIES",
+            "note": "NOTARIES uses all seven tiles of RAINTOS for 8, one more than SENATOR's 7. It also clears your rack and leaves nothing behind, where SENATOR keeps I."
+          }
+        ]
+      }
+    },
+    {
+      "id": "small-gap-better-leave",
+      "failures": [],
+      "answer": {
+        "summary": "You played EXIT for 11 points on your only turn, just 1 point behind the best play found. It was a solid opening that kept a reasonable leave.",
+        "themes": [
+          "Keep an eye on leave balance when two plays score almost the same",
+          "Use the X on a play that scores well, as you did here"
+        ],
+        "turns": [
+          {
+            "turn": 1,
+            "recommended_word": "DIXIT",
+            "note": "DIXIT scored 12 and kept ER, a smooth two-tile leave with one vowel and one consonant. EXIT was a good choice, but DIXIT gave you one more point and a slightly tidier leave than DIR."
+          }
+        ]
+      }
+    },
+    {
+      "id": "word-not-in-list",
+      "failures": [],
+      "answer": {
+        "summary": "You had one turn, and your play FABED was rejected by the dictionary, so the game ended with 0 points. FACED was available at 8H for 10 points and would have kept BG.",
+        "themes": [
+          "Check that a word is valid before you commit to it, especially when it is unusual or an unfamiliar form.",
+          "When a valid play scores well, take it over a risky one that looks similar."
+        ],
+        "turns": [
+          {
+            "turn": 1,
+            "recommended_word": "FACED",
+            "note": "FABED was not valid and scored nothing, while FACED at 8H used the same square and scored 10 points. If you doubt a word, pick a play you are sure of, like FACED or BADGE for 8 points."
+          }
+        ]
+      }
+    },
+    {
+      "id": "no-play-yet",
+      "failures": [],
+      "answer": {
+        "summary": "You swapped or passed on your only turn and scored 0 points. Your rack was TRAINED, which makes a seven-tile play, so a play was available.",
+        "themes": [
+          "Look for plays that use all seven tiles before you consider a swap or pass",
+          "Check your rack for common word patterns, since TRAINED and DETRAIN were both there"
+        ],
+        "turns": [
+          {
+            "turn": 1,
+            "recommended_word": "TRAINED",
+            "note": "TRAINED at 8H uses all seven tiles for 7 points, which beats the 0 you scored. DETRAIN scores the same if you prefer it."
+          }
+        ]
+      }
+    },
+    {
+      "id": "no-board-claims",
+      "failures": [],
+      "answer": {
+        "summary": "You had a seven-tile rack and played PLAY, which the dictionary rejected, so the turn scored nothing. The stats show a total score of 0 from one turn and one invalid play.",
+        "themes": [
+          "Check that your play is valid before you commit to it, because an invalid play scores nothing.",
+          "Look for plays that use all seven tiles when your rack allows it; here PLAYERS and PARSLEY both did."
+        ],
+        "turns": [
+          {
+            "turn": 1,
+            "recommended_word": "PLAYERS",
+            "note": "PLAY was rejected and scored 0, but PLAYERS used all seven tiles for 10 points and was available from the same rack. PARSLEY would have scored the same 10 points."
+          }
+        ]
+      }
+    },
+    {
+      "id": "list-cut-off",
+      "failures": [
+        "recommended None",
+        "mentioned none of ['may exist', 'might exist', 'may have been', 'could exist', 'better play', 'may be better', 'might be better']"
+      ],
+      "answer": {
+        "summary": "You played RETAINS on your only turn, using all seven tiles for 7 points. That matched the best play found, so you finished with no points behind.",
+        "themes": [
+          "Keep spotting seven-tile words: AEINRST gave you several options, and you found one.",
+          "When several plays tie on score, check the leave, though here every option left nothing."
+        ],
+        "turns": [
+          {
+            "turn": 1,
+            "recommended_word": null,
+            "note": "RETAINS was a strong choice: it used all seven tiles and tied the top score of 7. STAINER and NASTIER scored the same, so your pick cost you nothing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "points-versus-duplicates",
+      "failures": [],
+      "answer": {
+        "summary": "You played TRAIN for 5 points, which was the top-scoring play found, so there was no gap to the best option. The cost was the leave of UU, which holds a duplicate vowel and no consonants.",
+        "themes": [
+          "Watch duplicate vowels in your leave: TRAIN keeps UU, which is hard to use next turn.",
+          "Check whether a slightly lower score gives a better balanced leave when the gap is small."
+        ],
+        "turns": [
+          {
+            "turn": 1,
+            "recommended_word": "UNIT",
+            "note": "TRAIN scored 5 and was the best score, but it left UU. UNIT scored 4 and kept ARU, a more balanced leave for just one point less, so it is worth considering."
+          }
+        ]
+      }
+    },
+    {
+      "id": "habit-keeping-two-us",
+      "failures": [],
+      "answer": {
+        "summary": "You scored 18 points over three turns and finished 5 points behind the best plays found. Every play was valid, but you kept the extra U's each time and missed small gains.",
+        "themes": [
+          "You kept duplicate U's on every turn. Look for plays that use up at least one U.",
+          "Each turn had a higher-scoring play that also gave a better leave, so check the leave as well as the score.",
+          "Count how many vowels you keep. A leave of EUU has three vowels and no consonants."
+        ],
+        "turns": [
+          {
+            "turn": 1,
+            "recommended_word": "NUDGE",
+            "note": "NUDGE scored 7 against your 5 for TEND and used one of the U's. Your leave of GUU kept the duplicate U, while NUDGE left TU."
+          },
+          {
+            "turn": 2,
+            "recommended_word": "BRUTE",
+            "note": "BRUTE scored 8 against 6 for BRAT. It also left AU, which is better than the EUU you kept with BRAT."
+          },
+          {
+            "turn": 3,
+            "recommended_word": "SUPINE",
+            "note": "SUPINE scored 8 against 7 for SPINE and left a single U. SPINE left UU, so you kept the duplicate for one point less."
+          }
+        ]
+      }
+    },
+    {
+      "id": "strong-game",
+      "failures": [],
+      "answer": {
+        "summary": "You played two turns for a total of 16 points and were never behind the best play found. Turn two used all seven tiles with RETAINS, which is a good result from a strong rack.",
+        "themes": [
+          "Keep spotting plays that use all seven tiles, as you did with RETAINS.",
+          "Compare leaves when scores tie, since a better leave can decide close choices."
+        ],
+        "turns": [
+          {
+            "turn": 1,
+            "recommended_word": "HELLOS",
+            "note": "HOTELS and HELLOS both scored 9, so the leave decides it. HELLOS keeps T, which is a more flexible tile than the L you kept with HOTELS."
+          },
+          {
+            "turn": 2,
+            "recommended_word": null,
+            "note": "RETAINS used all seven tiles for 7 points, matching the best play found. STAINER scored the same, so your choice was fine."
+          }
+        ]
+      }
+    }
+  ]
+}

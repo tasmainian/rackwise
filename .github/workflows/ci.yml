@@ -1,0 +1,77 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  engine:
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: pgvector/pgvector:pg17
+        env:
+          POSTGRES_USER: rackwise
+          POSTGRES_PASSWORD: rackwise
+          POSTGRES_DB: rackwise
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U rackwise"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 10
+    env:
+      TEST_DATABASE_URL: postgresql://rackwise:rackwise@localhost:5432/rackwise
+    defaults:
+      run:
+        working-directory: engine
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: engine/go.mod
+          cache: false
+      - run: go vet ./...
+      - uses: golangci/golangci-lint-action@v9
+        with:
+          version: v2.15.0
+          working-directory: engine
+      - run: go test -race ./...
+
+  coach:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: coach
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - run: pip install -e ".[dev]"
+      - run: ruff check .
+      - run: ruff format --check .
+      - run: pytest
+
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
